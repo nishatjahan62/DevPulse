@@ -7,7 +7,7 @@ export const errorHandler = (
   res: Response,
   _next: NextFunction
 ): void => {
-  console.error('🔥 Unhandled Error:', err.stack);
+  console.error('Unhandled Error:', err.stack);
 
   res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
     success: false,
