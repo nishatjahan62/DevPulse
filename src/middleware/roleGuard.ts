@@ -8,11 +8,8 @@ export const requireMaintainer = (
   next: NextFunction
 ): void => {
   if (req.user?.role !== 'maintainer') {
-    sendError(
-      res,
-      StatusCodes.FORBIDDEN,
-      'Access denied. Maintainer role required.'
-    );
+  sendError(res, StatusCodes.FORBIDDEN, 'Access denied. Maintainer role required.', 'You need maintainer role to perform this action');
+
     return;
   }
   next();

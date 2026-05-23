@@ -12,7 +12,7 @@ export const authenticate = (
   const token = req.headers['authorization'] as string;
 
   if (!token) {
-    sendError(res, StatusCodes.UNAUTHORIZED, 'Access denied. No token provided.');
+    sendError(res, StatusCodes.UNAUTHORIZED, 'Access denied. No token provided.' ,'Need to provide token for access');
     return;
   }
 
@@ -25,6 +25,6 @@ export const authenticate = (
     req.user = decoded;
     next();
   } catch {
-    sendError(res, StatusCodes.UNAUTHORIZED, 'Invalid or expired token.');
+    sendError(res, StatusCodes.UNAUTHORIZED, 'Invalid or expired token.' ,'The token is Invalid or expired ');
   }
 };
