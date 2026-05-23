@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 import authRoutes from "./modules/auth/auth.routes"
+import issueRoutes  from "./modules/auth/auth.routes"
 import { errorHandler } from './middleware/errorHandler';
 
 const app: Application = express();
@@ -15,6 +16,7 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/issus', issueRoutes);
 
 
 app.use((_req: Request, res: Response) => {
