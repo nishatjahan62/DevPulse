@@ -136,7 +136,7 @@ export const remove = async (
     }
 
     await deleteIssue(id);
-    sendSuccess(res, StatusCodes.OK, 'Issue deleted successfully', null);
+    sendSuccess(res, StatusCodes.OK, 'Issue deleted successfully');
   } catch (error) {
     if (error instanceof Error && error.message === 'ISSUE_NOT_FOUND') {
       sendError(res, StatusCodes.NOT_FOUND, 'Issue not found', 'No issue exists with the provided ID');
